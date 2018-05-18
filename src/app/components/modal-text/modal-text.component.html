@@ -1,0 +1,20 @@
+<div id="modalText" class="modal">
+  <form [formGroup]="textForm"  (submit)="register(textForm.value)" autocomplete="off" novalidate>
+    <div class="modal-content">
+      <h4 [ngStyle]="{color : activeColor}">Set component name</h4>
+      <p>A bunch of text</p>
+      <div class="row">
+
+        <div class="input-field col s12">
+          <input id="name" type="text" formControlName="name" [ngClass]="{invalid : (textForm.get('name').untouched && !textForm.get('name').valid)
+                      || (textForm.get('name').touched  || textForm.get('name').dirty)
+                      && !textForm.get('name').valid, validate : textForm.get('name').valid}">
+        </div>
+      </div>
+    </div>
+    <div class=" modal-footer ">
+      <button type="submit " class=" modal-action modal-close waves-effect waves-green btn-flat " [disabled]="!textForm.valid ">Valider</button>
+      <button type="button" class=" modal-action modal-close waves-effect waves-red btn-flat ">Cancel</button>
+    </div>
+  </form>
+</div>

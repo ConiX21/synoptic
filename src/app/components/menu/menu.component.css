@@ -1,0 +1,49 @@
+.fixed-action-btn.horizontal.commands {
+    top: 20px;
+    *right: 85px;
+    height: 45px;
+    margin-left: 0;
+}
+
+.fixed-action-btn.horizontal ul {
+    text-align: right;
+    right: 42px;
+    top: 15px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    height: 60px;
+    left: auto;
+    width: 500px;
+}
+
+div.settings {
+    position: absolute;
+    bottom: 15px;
+    right: 25px;
+}
+
+div.information {
+    position: absolute;
+    top: 245px;
+    right: 17px;
+    width: 45px;
+}
+
+div.information a {
+    cursor: no-drop;
+}
+
+div.settings a {
+    margin-left: 15px;
+}
+
+.canvas-manager {
+    position: absolute;
+    top: 65px;
+    right: 17px;
+    width: 45px;
+}
+
+.canvas-manager a {
+    margin-top: 15px;
+}

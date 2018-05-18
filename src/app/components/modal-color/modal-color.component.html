@@ -1,0 +1,12 @@
+<div id="modalColor" class="modal">
+  <div class="modal-content">
+    <h4 [ngStyle]="{color : activeColor}">Choose color</h4>
+    <p>A bunch of text</p>
+    <div>
+      <span *ngFor="let color of colors" [ngStyle]="{backgroundColor : color}" (click)="chooseColor($event)" (mouseover)="colorHover($event)"></span>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button  class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</button>
+  </div>
+</div>

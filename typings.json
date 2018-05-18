@@ -1,0 +1,5 @@
+{
+  "globalDependencies": {
+    "raphael": "registry:dt/raphael#2.1.0+20160727010356"
+  }
+}

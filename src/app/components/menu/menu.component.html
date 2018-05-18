@@ -1,0 +1,35 @@
+<div *ngIf="isEdit" class="fixed-action-btn horizontal click-to-toggle commands">
+    <a class="btn-floating red">
+        <i class="material-icons">settings_input_component</i>
+    </a>
+    <ul>
+        <li><a class="btn-floating " [ngClass]="colorSkin.fan.name" (click)="createComponent('Fan')"><i class="material-icons" [ngStyle]="{color: colorSkin.icons}">toys</i></a></li>
+        <li>
+            <a class="btn-floating" [ngClass]="colorSkin.gauge.name" (click)="createComponent('Gauge')"><i class="material-icons" [ngStyle]="{color: colorSkin.icons}">slow_motion_video</i></a>
+        </li>
+        <li>
+            <a class="btn-floating" [ngClass]="colorSkin.generator.name" (click)="createComponent('Generator')"><i class="material-icons" [ngStyle]="{color: colorSkin.icons}">power_input</i></a>
+        </li>
+        <!--<li><a class="btn-floating yellow darken-1"><i class="material-icons" [ngStyle]="{color: colorSkin.icons}">memory</i></a></li>-->
+        <li>
+            <a class="btn-floating" [ngClass]="colorSkin.indicator.name" (click)="createComponent('Indicator')"><i class="material-icons" [ngStyle]="{color: colorSkin.icons}">lightbulb_outline</i></a>
+        </li>
+        <li>
+            <a class="btn-floating" [ngClass]="colorSkin.thermometer.name" (click)="createComponent('Thermometer')"><i class="mdi mdi-thermometer" [ngStyle]="{color: colorSkin.icons}"></i></a>
+        </li>
+        <i></i>
+    </ul>
+</div>
+<div *ngIf="isEdit" class="canvas-manager">
+    <a class="btn-floating waves-effect orange darken-4" (click)="zoom('in')" [ngClass]="{disabled : zoomState == 'onlyOut'}"><i class="material-icons">zoom_in</i></a>
+    <a class="btn-floating waves-effect orange darken-4" (click)="zoom('out')" [ngClass]="{disabled : zoomState == 'onlyIn'}"><i class="material-icons">zoom_out</i></a>
+</div>
+<div *ngIf="isEdit" class="information">
+    <a class="btn-floating waves-effect  light-green darken-4" (click)="zoom('out')" [ngClass]="{disabled : !filter}"><i class="material-icons">filter_list</i></a>
+</div>
+<div class="settings">
+    <a *ngIf="isEdit" class="btn-floating waves-effect waves-light green" (click)="save()"><i class="material-icons">save</i></a>
+    <a class="btn-floating waves-effect waves-light red"><i class="material-icons">power_settings_new</i></a>
+    <a  class="btn-floating waves-effect waves-light grey" (click)="settings()"><i class="material-icons">settings</i></a>
+    <a *ngIf="isEdit" class="btn-floating waves-effect waves-light red" (click)="deleteAll()"><i class="material-icons">delete</i></a>
+</div>

@@ -1,0 +1,13 @@
+#modalYesNo {
+    /*background-color: #202530;*/
+}
+
+h5, #yes, #no {
+    text-align: center;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

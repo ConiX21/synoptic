@@ -1,0 +1,82 @@
+<div class="container" *ngIf="visible" [@visibility]="visibility">
+  <form [formGroup]="synopticForm" novalidate (submit)="register(synopticForm.value)" autocomplete="off">
+    <diV class="row">
+      <div class="col s6">
+        <h5>Update Synoptic</h5>
+      </div>
+      <div class="col s6 right-align">
+        <div class="right-align">
+          <h6>date : {{currentDate}}</h6>
+        </div>
+      </div>
+    </diV>
+    <div class="row">
+      <div class="col s6 offset-s3">
+        <div class="row">
+
+          <!--Input Name-->
+          <div class="row">
+            <div  class="input-field active col s12">
+              <input class="valid" maxlength="20" formControlName="name" id="name" type="text" [ngClass]="{invalid : (synopticForm.get('name').untouched && !synopticForm.get('name').valid)
+                                          || (synopticForm.get('name').touched  || synopticForm.get('name').dirty)
+                                           && !synopticForm.get('name').valid, validate : synopticForm.get('name').valid}">
+                <label class="active">Name</label>
+            </div>
+          </div>
+
+          <!--Input Description-->
+          <div class="row">
+            <div class="input-field col s12">
+              <textarea maxlength="200" formControlName="description" id="description" class="materialize-textarea valid" [ngClass]="{invalid : (synopticForm.get('description').untouched && !synopticForm.get('description').valid)
+                                              || (synopticForm.get('description').touched  || synopticForm.get('description').dirty)
+                                              && !synopticForm.get('description').valid, validate : synopticForm.get('description').valid}"></textarea>
+                <label class="active" for="description">Description (200 characters max)</label>
+            </div>
+          </div>
+
+          <!--Input creator-->
+          <div class="row">
+            <div class="input-field col s12">
+              <input class="valid" maxlength="20" formControlName="creator" id="creator" type="text" [ngClass]="{invalid : (synopticForm.get('creator').untouched && !synopticForm.get('creator').valid)
+                      || (synopticForm.get('creator').touched  || synopticForm.get('creator').dirty)
+                      && !synopticForm.get('creator').valid, validate : synopticForm.get('creator').valid}">
+                <label class="active" for="creator">Creator</label>
+            </div>
+          </div>
+
+          <!--Input essai-->
+          <div class="row">
+            <div class="input-field col s12">
+              <select>
+                <option value="" disabled selected>Choose your essai</option>
+                <option *ngFor="let essai of essais" [attr.value]="essai">{{essai.name}}</option>
+              </select>
+              <label for="essai">Essai</label>
+            </div>
+          </div>
+
+          <!--Input image -->
+          <div class="file-field input-field">
+            <div class="btn" [ngClass]="colorSkin">
+              <span>Image</span>
+              <input class="valid" id="file" type="file" (change)="change($event)" #fileInput class="invalid"/>
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path valid" type="text" placeholder="Upload your synoptic image" formControlName="image" [ngClass]="{invalid : (!imageState && synoptic.image != '') || (!imageState && synoptic.image == ''), validate : (imageState && synoptic.image != '')}">
+              <div *ngIf="!imageState && synoptic.image != ''" class="card-panel  red darken-1">
+                <span class="white-text"><strong>Error : </strong>You need to use a jpg or png file</span>
+              </div>
+            </div>
+          </div>
+          <img id="preview" class="materialboxed" src="">
+          <br/>
+          <!--Buttons-->
+          <div class="row right-align">
+            <button type="submit" class="waves-effect waves-light btn" [ngClass]="colorSkin" [disabled]="!synopticForm.valid || !imageState">Update</button>
+            <button type="button" class="waves-effect waves-light btn red darken-3" (click)="cancel($event)" >Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

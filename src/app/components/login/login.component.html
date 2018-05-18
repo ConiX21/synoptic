@@ -1,0 +1,30 @@
+<div class="col s4 m4 l4 offset-s3 offset-m3 offset-l4" [@loadLogin]="state">
+
+  <!-- <h1>VASCO Synotpic<small> by Nerys</small></h1> -->
+  <div class="row flex-row">
+    <form (submit)="connect(loginForm.value)" [formGroup]="loginForm" novalidate>
+      <div class="flex-col">
+        <div>
+          <h3 class="center-align" i18n="Connecter">SIGN IN</h3>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="login" type="text" class="validate" placeholder="login" formControlName="login">
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s12">
+            <input id="password" type="password" class="validate" placeholder="password" formControlName="password">
+          </div>
+        </div>
+        <button type="submit" class="waves-effect waves-light btn" [ngClass]="colorSkin">SIGN IN</button>
+      </div>
+      <div class="center-align link">
+        <a href="#">Forgot password ?</a>
+      </div>
+    </form>
+  </div>
+  <div class="row">
+      <app-error [componentState]="errorState" [errorMessage]="errorMessage"></app-error>
+    </div>
+</div>

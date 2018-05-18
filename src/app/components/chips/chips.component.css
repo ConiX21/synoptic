@@ -1,0 +1,9 @@
+.chip {
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+}
+
+.chip span {
+    font-size: 25px;
+}

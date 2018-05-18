@@ -1,0 +1,9 @@
+.container {
+    height: 90vh;
+}
+
+img {
+    padding: 20px;
+    background-color: rgb(255,255,255);
+    border-radius: 5px;
+}

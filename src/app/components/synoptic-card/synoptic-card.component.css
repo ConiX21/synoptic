@@ -1,0 +1,24 @@
+
+p.date{
+    font-size: .7em;
+    font-style: italic;
+    padding-bottom: 15px;
+}
+
+
+.card .card-action a:not(.btn), .card .card-title{
+    color:#1d2935;
+}
+
+.card .card-action a:not(.btn):hover, p.date {
+    color:#616161;
+}
+
+.card .card-title {
+    font-size : 16px;
+    font-weight: bold;
+}
+
+.card .card-content {
+    font-size : 14px;
+}

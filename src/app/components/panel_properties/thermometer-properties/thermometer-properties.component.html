@@ -1,0 +1,66 @@
+<!--<p>
+  thermometer-properties works!
+</p>-->
+
+<div class="row">
+    <div class="col m12">
+        <div class="center-align">
+            <div></div>
+            <button class="btn-floating waves-effect waves-light" [ngClass]="colorSkin" (click)="onOpenText($event, 'name')"><i class="material-icons">subject</i></button>
+        </div>
+        <div>
+            <div class="center-align label"><label>Name</label></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col m6">
+        <div class="center-align">
+            <div></div>
+            <button class="btn-floating waves-effect waves-light" [ngClass]="colorSkin" (click)="onOpenColor($event, 'mercuryColor')"><i class="material-icons">color_lens</i></button>
+        </div>
+        <div>
+            <div class="label center-align"><label>Mercury color</label></div>
+        </div>
+    </div>
+    <div class="col m6">
+        <div class="center-align">
+            <div></div>
+            <button class="btn-floating waves-effect waves-light" [ngClass]="colorSkin" (click)="onOpenColor($event, 'valueColor')"><i class="material-icons">color_lens</i></button>
+        </div>
+        <div>
+            <div class="center-align label"><label>Value color</label></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col m6">
+        <div class="center-align">
+            <div></div>
+            <button class="btn-floating waves-effect waves-light" [ngClass]="colorSkin" (click)="onOpenText($event, 'unitText')"><i class="material-icons">subject</i></button>
+        </div>
+        <div>
+            <div class="center-align label"><label>Unit</label></div>
+        </div>
+    </div>
+    <div class="col m6">
+        <div class="center-align">
+            <div></div>
+            <button class="btn-floating waves-effect waves-light" [ngClass]="colorSkin" (click)="onOpenColor($event, 'unitColor')"><i class="material-icons">color_lens</i></button>
+        </div>
+        <div>
+            <div class="center-align label"><label>Unit color</label></div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col m12">
+        <div class="center-align">
+            <div></div>
+            <button class="btn-floating waves-effect waves-light" [ngClass]="colorSkin" (click)="onOpenVoie()"><i class="material-icons">subject</i></button>
+        </div>
+        <div>
+            <div class="center-align label"><label>Voie</label></div>
+        </div>
+    </div>
+</div>

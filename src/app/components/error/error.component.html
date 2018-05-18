@@ -1,0 +1,8 @@
+<div class="col s12 m6 offset-s3 offset-m3 offset-l3"  [@errorEffect]="componentState" (@errorEffect.done)="endErrorEffect($event)">
+  <div class="card-panel red darken-1"  >
+    <span class="white-text"><strong>{{errorMessage}}</strong></span>
+  </div>
+</div>
+
+
+<!-- [@errorEffect]="errorState" (@errorEffect.done)="endErrorEffect($event)" -->

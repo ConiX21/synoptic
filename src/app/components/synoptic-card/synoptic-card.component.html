@@ -1,0 +1,15 @@
+<div class="col s11 m6 l4">
+  <div class="card" [ngClass]="colorSkin">
+    <div class="card-content white-text">
+      <span class="card-title">{{element.data.title}}</span>
+      <p class="date">{{element.data.creator}} - {{element.data.date}}</p>
+      <p>{{element.data.description}}</p>
+    </div>
+    <div class="card-action">
+      <a (click)="startWorkspace('play')" [routerLink]=""><i class="small material-icons">play_circle_outline</i></a>
+      <a (click)="startWorkspace('edit')" [routerLink]=""><i class="small material-icons">view_quilt</i></a>
+      <a [routerLink]="['/synoptic/update', element.id]" ><i class="small material-icons">edit</i></a>
+      <a (click)="onOpenYesNo()" [routerLink]><i class="small material-icons">delete</i></a>
+    </div>
+  </div>
+</div>

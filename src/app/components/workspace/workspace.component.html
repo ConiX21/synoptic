@@ -1,0 +1,51 @@
+<div><!--[ngStyle]="{'background': 'url(' + background + ')'}"-->
+    <!--Menu creation component et menu workspace-->
+    <!-- <ny-menu #menu [isEdit]="isEdit" [actualZoom]="actualZoom" [maxZoom]="sizes.length-1" (onCreated)="onCreated($event)" (onZoom)="onZoom($event)" (onSettings)="onSettings()" (onDeleteAll)="onDeleteAll()" (onSave)="onSave()" [@interface]="stateInterface"></ny-menu> -->
+    <ny-menu #menu [isEdit]="1" [actualZoom]="actualZoom" [maxZoom]="sizes.length-1" (onCreated)="onCreated($event)" (onZoom)="onZoom($event)" (onSettings)="onSettings()" (onDeleteAll)="onDeleteAll()" (onSave)="onSave()" [@interface]="stateInterface"></ny-menu>
+
+    <img src="" style="position: absolute">
+    <!--Zone de depot des composannts-->
+    <div>
+        <template #dynamicComponentContainer></template>
+    </div>
+
+    <!--<ny-panel-properties #panelProperties></ny-panel-properties>-->
+    <ny-modal-yes-no #yesNo [id]="'modalYesNo'" [message]="'Are you sure you want to delete this component ?'"></ny-modal-yes-no>
+    <ny-modal-yes-no #yesNoAll [id]="'modalYesNoAll'" [message]="'Are you sure you want to delete ALL THE COMPONENTS ?'"></ny-modal-yes-no>
+    <ny-modal-color [property]="actualProp" [activeComponent]="objectSettings"></ny-modal-color>
+    <ny-modal-text [property]="actualProp" [activeComponent]="objectSettings"></ny-modal-text>
+    <ny-modal-voie [property]="actualProp" [activeComponent]="objectSettings"></ny-modal-voie>
+    <ny-loader #loader> </ny-loader>
+
+    <ul id="slide-out" class="side-nav" [ngSwitch]="objectSettings?.constructor.name" [ngClass]="{workspace : objectSettings?.constructor.name == 'WorkspaceComponent'}">
+        <li>
+            <div class="userView">
+                <label><span class="white-text name">{{titleProperties}}</span></label>
+                <!--<a href="#!user"><img class="circle" src="assets/images/yuna.jpg"></a>-->
+            </div>
+        </li>
+        <li *ngSwitchCase="'IndicatorComponent'">
+            <ny-indicator-properties [activeComponent]="objectSettings[0]"></ny-indicator-properties>
+        </li>
+        <li *ngSwitchCase="'FanComponent'">
+            <ny-fan-properties [activeComponent]="objectSettings.object"></ny-fan-properties>
+        </li>
+        <li *ngSwitchCase="'GeneratorComponent'">
+            <ny-generator-properties [activeComponent]="objectSettings[0]"></ny-generator-properties>
+        </li>
+        <li *ngSwitchCase="'GaugeComponent'">
+            <ny-gauge-properties [activeComponent]="objectSettings[0]"></ny-gauge-properties>
+        </li>
+        <li *ngSwitchCase="'ThermometerComponent'">
+            <ny-thermometer-properties [activeComponent]="objectSettings[0]"></ny-thermometer-properties>
+        </li>
+        <li *ngSwitchCase="'WorkspaceComponent'">
+            <ny-synoptic-properties [activeComponent]="workspace" #workspaceSettings></ny-synoptic-properties>
+        </li>
+        <li *ngSwitchDefault>
+            Test
+        </li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons" style="display:none">menu</i></a>
+    <ny-chips [nbComponents]="components.length"></ny-chips>
+</div>

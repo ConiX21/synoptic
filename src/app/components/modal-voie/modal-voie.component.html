@@ -1,0 +1,18 @@
+<div height="1000" id="modalVoie" class="modal">
+  <div class="modal-content">
+    <h4 [ngStyle]="{color : activeColor}">Choose voie</h4>
+    <div class="row">
+      <div class="input-field col s12">
+        <select>
+          <option value="" disabled selected>Choose your voie</option>
+          <option *ngFor="let voie of voies" [attr.value]="voie">{{voie.name}}</option>
+        </select>
+        <label for="voie">Voie</label>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button  class=" modal-action modal-close waves-effect waves-green btn-flat">Ok</button>
+    <button  class=" modal-action modal-close waves-effect waves-green btn-flat">Cancel</button>
+  </div>
+</div>

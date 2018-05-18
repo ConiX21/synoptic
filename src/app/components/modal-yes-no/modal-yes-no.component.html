@@ -1,0 +1,14 @@
+<div [attr.id]="id" class="modal blue-grey darken-4">
+  <div class="modal-content">
+    <h5 [ngStyle]="{color : activeColor}">{{message}}</h5>
+    <br/>
+    <div class="row">
+      <div class="col s6">
+        <button id="yes" class="btn modal-action modal-close waves-effect waves-light blue lighten-1 btn-flat" (click)="click(true)">Yes</button>
+      </div>
+      <div class="col s6">
+        <button id="no" class="btn modal-action modal-close waves-effect waves-light red lighten-1 btn-flat" (click)="click(false)">No</button>
+      </div>
+    </div>
+  </div>
+</div>
